@@ -45,3 +45,33 @@ Major disadvantage: equal column heights
 > The clear CSS property sets whether an element must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements.
 
 A common pattern is to clear the ::after pseudo-element of a row and add a block display
+
+## Flexbox
+
+There's a parent and a child. The parent is called the flex container (row) and the child is called the flex item (cells).
+
+Flexbox works in 1 dimension!
+
+- **main axis**: matches the direction of that flex container
+- **cross axis**
+
+![Flex Column](images/FlexColumn.png)
+
+![Flex Row](images/FlexRow.png)
+
+### Three versions of flexbox
+
+- 2009: display: box;
+- 2011: display: flexbox; (IE 10)
+- 2016: display: flex;
+
+Prefixing may still be required depending on browser support desired
+
+### Parent
+
+- **justify-content**: determines the distribution of the flex-items within the flex-container on the main axis. If flex-direction is row, then horizontal is the main axis. When flex-direction is column, then column is the main axis.
+- **align-items**: This aligns our items on the cross axis
+
+### Children
+
+- **flex-basis**: is analogous to width, but not quite the same thing. Width is an absolute measurement — an element is that wide, all the time. We can measure width in relative units (say 25% instead of 250px), but in the end, the measurement itself never changes. For flex-basis, we try to achieve a given width with the space available. It could be smaller than this width, or it could be wider, depending on the extra space and how that’s supposed to be distributed. Distribution of extra space is controlled by flex-grow and flex-shrink (below).
