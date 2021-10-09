@@ -82,3 +82,30 @@ Prefixing may still be required depending on browser support desired
 
 - **flex** <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>
 
+## Responsive Images
+
+- Images should change size based on screen resolution
+  - Load a big image and let it scale (not good)
+  - Server-side (good)
+  - Client-side: Load several images and display the right for this resolution (not good)
+  - Client-side: let JavaScript decide (better)
+
+### `<picture />` tag (EVEN BETTER)
+
+- Picturefill polyfill can help backwards compatibility
+- List images with the `<resource />` tag
+- Use `<img />` tag for default behavior and image properties (alt)
+
+[Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+#### Picturefill
+
+http://scottjehl.github.io/picturefill/
+
+#### Performance
+
+[Media Query & Asset Downloading Results](https://timkadlec.com/2012/04/media-query-asset-downloading-results/)
