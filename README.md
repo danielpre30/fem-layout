@@ -2,7 +2,7 @@
 
 Taught October 3-4, 2017, at Frontend Masters
 
-Course is located here: https://frontendmasters.com/courses/css-grids-flexbox/
+Course is located here: [https://frontendmasters.com/courses/css-grids-flexbox/]
 
 - [Code & Slides](https://github.com/jen4web/fem-layout/)
 
@@ -104,8 +104,52 @@ Prefixing may still be required depending on browser support desired
 
 #### Picturefill
 
-http://scottjehl.github.io/picturefill/
+[http://scottjehl.github.io/picturefill/]
 
 #### Performance
 
 [Media Query & Asset Downloading Results](https://timkadlec.com/2012/04/media-query-asset-downloading-results/)
+
+## CSS Grid
+
+- No "row" markup required
+- Grid is a whole two dimensional thing
+- Use flexbox for UI elements, but use Grid for major layout
+
+### POLYFILLS & FALLBACKS
+
+- Old spec: [https://github.com/codler/Grid-Layout-Polyfill]
+- New spec: [https://github.com/FremyCompany/css-grid-polyfill/]
+- @supports may help with all but IE browsers: [https://developer.mozilla.org/en-US/docs/Web/CSS/@supports]
+- Rachel Andrew: Grid "fallbacks" and overrides [https://rachelandrew.co.uk/css/cheatsheets/grid-fallback]
+
+### Syntax
+
+- We also have Grid containers and Grid items
+
+#### Container
+
+![Grid Container](images/GridContainer.png)
+
+`grid-gap` was replaced by `gap` property.
+
+- `grid-template-rows` defines the line names and track sizing functions of the grid rows.
+- `grid-template-columns` defines the line names and track sizing functions of the grid columns.
+
+#### Items
+
+![Grid Column](images/GridColumn.png)
+
+![Grid Row](images/GridRow.png)
+
+### Alternate Syntax
+
+Named grid template areas (header, footer, etc): [http://gridbyexample.com/examples/#example11]
+
+### Reordering
+
+We can reorder items using `grid-column` and `grid-row` properties
+
+### Implicit Grid
+
+Grid gives a value of one cell to the boxes that have not their `grid-row` and `grid-column` values set.
