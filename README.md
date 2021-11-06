@@ -116,6 +116,8 @@ Prefixing may still be required depending on browser support desired
 - Grid is a whole two dimensional thing
 - Use flexbox for UI elements, but use Grid for major layout
 
+[A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
 ### POLYFILLS & FALLBACKS
 
 - Old spec: [https://github.com/codler/Grid-Layout-Polyfill]
@@ -135,12 +137,21 @@ Prefixing may still be required depending on browser support desired
 
 - `grid-template-rows` defines the line names and track sizing functions of the grid rows.
 - `grid-template-columns` defines the line names and track sizing functions of the grid columns.
+- **fr units**: They essentially mean “portion of the remaining space”
+
+  ![fr units](images/frUnits.png)
+
+- `grid-template-areas`: Defines a grid template by referencing the names of the grid areas which are specified with the `grid-area` property. Repeating the name of a grid area causes the content to span those cells. A period signifies an empty cell. The syntax itself provides a visualization of the structure of the grid.
+
+  ![grid area](images/GridArea.png)
 
 #### Items
 
 ![Grid Column](images/GridColumn.png)
 
 ![Grid Row](images/GridRow.png)
+
+- `span <number>`: the item will span across the provided number of grid tracks
 
 ### Alternate Syntax
 
