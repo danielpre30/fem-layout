@@ -164,3 +164,6 @@ We can reorder items using `grid-column` and `grid-row` properties
 ### Implicit Grid
 
 Grid gives a value of one cell to the boxes that have not their `grid-row` and `grid-column` values set.
+
+[Grid Fallbacks](https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks)
+[Grid by Example](https://gridbyexample.com/)
