@@ -1,10 +1,18 @@
 # Frontend Masters: CSS Grids and Flexbox in Responsive Web Design workshop files
 
+## v1
+
 Taught October 3-4, 2017, at Frontend Masters
 
 Course is located here: [https://frontendmasters.com/courses/css-grids-flexbox/]
 
 - [Code & Slides](https://github.com/jen4web/fem-layout/)
+
+## v2
+
+- [Course Link](https://frontendmasters.com/courses/css-grid-flexbox-v2/)
+- [Github Repo](https://github.com/FrontendMasters/grid-flexbox-v2)
+- [Course Website](https://frontendmasters.github.io/grid-flexbox-v2/)
 
 ## Introduction
 
@@ -71,6 +79,7 @@ Prefixing may still be required depending on browser support desired
 
 - **justify-content**: determines the distribution of the flex-items within the flex-container on the main axis. If flex-direction is row, then horizontal is the main axis. When flex-direction is column, then column is the main axis.
 - **align-items**: This aligns our items on the cross axis
+- **gap**: is a shorthand for `row-gap` and `column-gap`, specifying the size of gutters, which is the space between rows and columns within grid, flex, and multi-column layouts
 
 ### Children
 
@@ -167,3 +176,23 @@ Grid gives a value of one cell to the boxes that have not their `grid-row` and `
 
 [Grid Fallbacks](https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks)
 [Grid by Example](https://gridbyexample.com/)
+
+## Absolute and Relative position
+
+Absolute elements will position themself inside the closest relative positioned element otherwise, they will position inside the body page
+
+[Figure Caption & Figure Caption with Flexbox](https://frontendmasters.github.io/grid-flexbox-v2/flexbox-figure-figcaption)
+
+```css
+figure {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+}
+figcaption {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  opacity: 0.7;
+}
+```
