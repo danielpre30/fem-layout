@@ -1,5 +1,36 @@
 # Frontend Masters: CSS Grids and Flexbox in Responsive Web Design workshop files
 
+- [Frontend Masters: CSS Grids and Flexbox in Responsive Web Design workshop files](#frontend-masters-css-grids-and-flexbox-in-responsive-web-design-workshop-files)
+  - [v1](#v1)
+  - [v2](#v2)
+  - [Introduction](#introduction)
+    - [Responsive Design](#responsive-design)
+      - [Flexible grid-based layout](#flexible-grid-based-layout)
+      - [Media queries (CSS3)](#media-queries-css3)
+      - [Images that resize](#images-that-resize)
+  - [Floats](#floats)
+    - [clear](#clear)
+  - [Flexbox](#flexbox)
+    - [Three versions of flexbox](#three-versions-of-flexbox)
+    - [Parent](#parent)
+    - [Children](#children)
+  - [Responsive Images](#responsive-images)
+    - [`<picture />` tag](#picture--tag)
+    - [srcset and sizes](#srcset-and-sizes)
+      - [Picturefill](#picturefill)
+      - [Performance](#performance)
+  - [CSS Grid](#css-grid)
+    - [Polyfills & Fallbacks](#polyfills--fallbacks)
+    - [Syntax](#syntax)
+      - [Container](#container)
+      - [Items](#items)
+    - [Alternate Syntax](#alternate-syntax)
+    - [Reordering](#reordering)
+    - [Implicit Grid](#implicit-grid)
+  - [Overlap elements](#overlap-elements)
+    - [Absolute and Relative position](#absolute-and-relative-position)
+    - [Grid](#grid)
+
 ## v1
 
 Taught October 3-4, 2017, at Frontend Masters
@@ -99,7 +130,7 @@ Prefixing may still be required depending on browser support desired
   - Client-side: Load several images and display the right for this resolution (not good)
   - Client-side: let JavaScript decide (better)
 
-### `<picture />` tag (EVEN BETTER)
+### `<picture />` tag
 
 - Picturefill polyfill can help backwards compatibility
 - List images with the `<resource />` tag
@@ -157,7 +188,7 @@ Background images should always be inside media queries.
 
 [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-### POLYFILLS & FALLBACKS
+### Polyfills & Fallbacks
 
 - Old spec: [https://github.com/codler/Grid-Layout-Polyfill]
 - New spec: [https://github.com/FremyCompany/css-grid-polyfill/]
@@ -207,7 +238,9 @@ Grid gives a value of one cell to the boxes that have not their `grid-row` and `
 [Grid Fallbacks](https://rachelandrew.co.uk/css/cheatsheets/grid-fallbacks)
 [Grid by Example](https://gridbyexample.com/)
 
-## Absolute and Relative position
+## Overlap elements
+
+### Absolute and Relative position
 
 Absolute elements will position themself inside the closest relative positioned element otherwise, they will position inside the body page
 
@@ -239,6 +272,8 @@ figcaption {
   opacity: 0.7;
 }
 ```
+
+### Grid
 
 Grid allows cells to overlap to get the same behavior.
 
