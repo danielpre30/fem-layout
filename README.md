@@ -105,7 +105,34 @@ Prefixing may still be required depending on browser support desired
 - List images with the `<resource />` tag
 - Use `<img />` tag for default behavior and image properties (alt)
 
+```html
+<picture>
+  <source
+    srcset="/media/cc0-images/surfer-240-200.jpg"
+    media="(min-width: 800px)"
+  />
+  <img src="/media/cc0-images/painted-hand-298-332.jpg" alt="" />
+</picture>
+```
+
 [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)
+
+### srcset and sizes
+
+[Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/)
+
+The browser will decide which image to load, even if it's not the best option or the image you expect. Different browsers may make different choices.
+
+![use](images/SrcsetAndSizes.png)
+
+```html
+<img
+  src="small.jpg"
+  srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w"
+  sizes="(min-width: 36em) 33.3vw, 100vw"
+  alt="A rad wolf"
+/>
+```
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -119,11 +146,14 @@ Prefixing may still be required depending on browser support desired
 
 [Media Query & Asset Downloading Results](https://timkadlec.com/2012/04/media-query-asset-downloading-results/)
 
+Background images should always be inside media queries.
+
 ## CSS Grid
 
 - No "row" markup required
 - Grid is a whole two dimensional thing
-- Use flexbox for UI elements, but use Grid for major layout
+- ~~Use flexbox for UI elements, but use Grid for major layout~~
+- **Use Flexbox and Grid where they make the most sense.**
 
 [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
@@ -183,6 +213,19 @@ Absolute elements will position themself inside the closest relative positioned 
 
 [Figure Caption & Figure Caption with Flexbox](https://frontendmasters.github.io/grid-flexbox-v2/flexbox-figure-figcaption)
 
+```html
+<figure>
+  <img
+    src="https://assets.codepen.io/296057/fem-fb-one.png"
+    alt="Image of bubbles through a microscope."
+  />
+  <figcaption>
+    <h2>Bubbles</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </figcaption>
+</figure>
+```
+
 ```css
 figure {
   display: flex;
@@ -193,6 +236,29 @@ figcaption {
   position: absolute;
   bottom: 0%;
   width: 100%;
+  opacity: 0.7;
+}
+```
+
+Grid allows cells to overlap to get the same behavior.
+
+```css
+figure {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+}
+
+img {
+  /* image must stretch across all rows */
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+
+figcaption {
+  grid-column: 1/2;
+  /* caption overlaps the last row with the image */
+  grid-row: 2/3;
   opacity: 0.7;
 }
 ```
